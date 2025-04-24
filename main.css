@@ -507,13 +507,12 @@ body {
 }
 
 .customer-photo img {
+  width: 120px; /* ajuste */
+  height: auto; /* mantém a proporção correta */
+  object-fit: contain; /* mostra a imagem inteira */
+  border-radius: 8px; /* use 50% se quiser arredondada */
   display: block;
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 50%;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .customer-name {
