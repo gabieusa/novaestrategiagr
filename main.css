@@ -507,13 +507,16 @@ body {
 }
 
 .customer-photo img {
-  width: 120px; /* ajuste */
-  height: auto; /* mantém a proporção correta */
-  object-fit: contain; /* mostra a imagem inteira */
-  border-radius: 8px; /* use 50% se quiser arredondada */
+  width: 120px;           /* tamanho fixo do quadrado */
+  height: 120px;
+  object-fit: contain;    /* garante que a imagem inteira apareça */
+  border-radius: 12px;    /* bordas arredondadas, mas ainda quadrado */
+  background-color: #fff; /* fundo opcional para contraste */
+  padding: 4px;           /* opcional, para espaçamento interno */
   display: block;
   margin: 0 auto;
 }
+
 
 .customer-name {
   margin-top: 1rem;
