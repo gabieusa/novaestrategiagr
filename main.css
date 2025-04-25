@@ -512,14 +512,9 @@ body {
   border: none;          /* Remove a borda */
   box-shadow: none;      /* Remove sombra */
 }
-
-@media (max-width: 480px) {
-  .customer-photo img {
-    width: 100%;
-    max-width: 200px;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 10px;
+.customer-photo {
+    text-align: center;
+  }
   } 
 
 .customer-name {
@@ -591,6 +586,15 @@ input, textarea {
   background-color: #1ebe5d;
 }
 
+@media (max-width: 480px) {
+  .customer-photo img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+
+  }
 /* Estilos Gerais do Rodapé */
 #footer {
   background-color: #2C2C2C; /* Grafite moderno */
