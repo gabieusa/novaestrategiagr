@@ -107,8 +107,9 @@ body {
   text-decoration: none;
   border-radius: 30px;
   font-weight: bold;
+  font-size: 0.9rem; /* ↓ tamanho da fonte */
   display: inline-block;
-  transition: all 0.3s ease; /* animação suave */
+  transition: all 0.3s ease;
 }
 
 .btn-itens:hover {
