@@ -500,17 +500,18 @@ body {
 }
 
 .customer-photo img {
-  width: 150px;           /* Tamanho fixo */
+  width: 150px;
   height: 150px;
-  object-fit: cover;      /* Preenche o círculo sem distorcer (contém a imagem) */
-  border-radius: 50%;     /* Transforma em círculo perfeito */
-  background-color: #fff; /* Fundo branco para contraste */
-  padding: 4px;          /* Espaçamento interno opcional */
+  object-fit: cover;       /* ou 'contain' para imagem inteira */
+  object-position: center; /* centraliza o foco da imagem */
+  border-radius: 50%;      /* círculo perfeito */
+  background-color: #fff;
+  padding: 4px;
   display: block;
-  border: 2px solid #f0f0f0; /* Borda opcional para destaque */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil (opcional) */
+  margin: 0 auto;          /* centraliza horizontalmente */
+  border: 2px solid #f0f0f0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 
 .customer-name {
   margin-top: 1rem;
