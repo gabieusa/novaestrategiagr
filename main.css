@@ -313,7 +313,17 @@ body {
   text-align: center;
   margin: 1rem 0;
   font-size: clamp(1rem, 2.5vw, 1.4rem);
-  position: relative; /* necessário para o ::after funcionar */
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+}
+
+/* Para telas muito pequenas onde ainda pode quebrar */
+@media (max-width: 400px) {
+  .food-menu-heading.highlight {
+    white-space: normal;
+    display: block;
+  }
 }
 
 .food-menu-heading.highlight::after {
