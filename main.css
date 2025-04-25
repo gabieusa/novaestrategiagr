@@ -507,7 +507,7 @@ body {
   background-color: #fff; /* fundo opcional para contraste */
   padding: 4px;           /* opcional, para espaçamento interno */
   display: block;
-  margin: 0 auto;
+  margin-bottom: 30px;
 }
 
 
