@@ -520,19 +520,7 @@ body {
     height: auto;
     border-radius: 10px;
     margin-bottom: 10px;
-  }
-  
-  .customer-photo {
-    text-align: center;
-  }
-  
-  .customer-photo::after {
-    content: "Brasil Esportes";
-    display: block;
-    font-weight: bold;
-    margin-top: 5px;
-  }
-}
+  } 
 
 .customer-name {
   margin-top: 1rem;
