@@ -501,15 +501,15 @@ body {
 .customer-photo img {
   width: 150px;
   height: 150px;
-  object-fit: cover;       /* ou 'contain' para imagem inteira */
-  object-position: center; /* centraliza o foco da imagem */
-  border-radius: 50%;      /* círculo perfeito */
-  background-color: #fff;
-  padding: 4px;
+  object-fit: contain;    /* Mostra a imagem inteira sem cortes */
+  object-position: center;
+  border-radius: 20px;
   display: block;
-  margin: 0 auto;          /* centraliza horizontalmente */
-  border: 2px solid #f0f0f0;
+  margin: 0 auto;
+  border: 3px solid #f0f0f0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  padding: 10px;          /* Adiciona espaço interno */
 }
 
 .customer-name {
