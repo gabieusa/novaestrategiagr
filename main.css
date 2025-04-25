@@ -500,14 +500,15 @@ body {
 }
 
 .customer-photo img {
-  width: 150px;           /* tamanho fixo do quadrado */
+  width: 150px;           /* Tamanho fixo */
   height: 150px;
-  object-fit: contain;    /* garante que a imagem inteira apareça */
-  border-radius: 20px;    /* bordas arredondadas, mas ainda quadrado */
-  background-color: #fff; /* fundo opcional para contraste */
-  padding: 4px;           /* opcional, para espaçamento interno */
+  object-fit: cover;      /* Preenche o círculo sem distorcer (contém a imagem) */
+  border-radius: 50%;     /* Transforma em círculo perfeito */
+  background-color: #fff; /* Fundo branco para contraste */
+  padding: 4px;          /* Espaçamento interno opcional */
   display: block;
-  margin-bottom: 30px;
+  border: 2px solid #f0f0f0; /* Borda opcional para destaque */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil (opcional) */
 }
 
 
