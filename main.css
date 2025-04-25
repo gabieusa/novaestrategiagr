@@ -813,7 +813,7 @@ input, textarea {
   }
   
   .footer-logo {
-    margin-bottom: 10px;
+    width: 80px; /* Reduz um pouco o logo em mobile */
   }
 }
 @media (max-width: 750px) {
