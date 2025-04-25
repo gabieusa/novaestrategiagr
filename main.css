@@ -115,7 +115,7 @@ body {
   background-color: #6b3f00;     /* cor mais clara ao passar o mouse */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* sombra ao redor */
   transform: scale(1.05);        /* leve zoom */
-}       
+}         
  
 .logo {
   order: 1.2;
