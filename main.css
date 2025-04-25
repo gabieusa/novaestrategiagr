@@ -316,7 +316,7 @@ body {
   font-size: clamp(1rem, 2.5vw, 1.4rem);
   position: relative;
   display: inline-block;
-  max-width: 200%;
+  max-width: 300%;
 }
 
 /* Para telas muito pequenas onde ainda pode quebrar */
