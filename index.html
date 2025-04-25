@@ -250,11 +250,9 @@
                 }
               }
               
-              const dadosEmpresa = `Nome: Nova Estratégia G&R%0AEmail: novaestrategiagr@gmail.com`;
+              const dadosEmpresa = `Nova Estratégia G&R%0AEmail: novaestrategiagr@gmail.com`;
               const mensagemCliente = `%0A%0AMensagem:%0A${mensagem}`;
-              
-              // Só adiciona resposta automática se NÃO for um contato salvo
-              let respostaAutomatica = '';
+              const respostaAutomatica = `${dadosEmpresa}${mensagemCliente}`;
               
               if (!isContactSaved) {
                 const agora = new Date();
