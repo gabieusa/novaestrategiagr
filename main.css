@@ -309,10 +309,12 @@ body {
 }
 
 .food-menu-heading.highlight {
-  color: #8a6d3b; /* Marrom dourado */
+  color: #8a6d3b;
   position: relative;
   display: inline-block;
-  font-size: 24px; /* Ajuste o tamanho como quiser */
+  font-size: clamp(1.2rem, 4vw, 2rem); /* tamanho mínimo, responsivo e máximo */
+  max-width: 100%; /* impede que ultrapasse o container */
+  text-align: center;
 }
 
 .food-menu-heading.highlight::after {
