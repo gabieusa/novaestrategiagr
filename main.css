@@ -652,6 +652,12 @@ input, textarea {
   color: #f8f9fa;
 }
 
+@media (max-width: 480px) {
+  .slogan-main {
+    white-space: normal; /* Permite quebra de linha se necessário */
+  }
+}
+
 .slogan-secondary {
   font-size: 0.9rem;
   margin: 5px 0 0;
