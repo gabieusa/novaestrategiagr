@@ -71,43 +71,57 @@ body {
   align-items: center;
 }
 
-/* Melhorias para o menu */
 .menu-items {
-    order: 2;
-    display: flex;
-    font-family: 'Poppins', sans-serif;
-    gap: 1.8rem; /* Espaçamento uniforme entre itens */
+  order: 2;
+  display: flex;
+  font-family: 'Poppins', sans-serif;
 }
 
 .menu-items li {
-    list-style: none;
-    margin-bottom: 0.5rem;
-    position: relative;
+  list-style: none;
+  margin-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
 }
 
 .menu-items a {
-    text-decoration: none;
-    color: rgb(78, 33, 3);
-    font-weight: 500;
-    display: inline-block;
-    transition: all 0.3s ease-in-out;
-    padding: 0.3rem 0.5rem; /* Adiciona padding interno */
-    letter-spacing: 0.5px; /* Espaçamento entre letras */
+  text-decoration: none;
+  color: rgb(78, 33, 3);
+  font-weight: 500;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
 }
 
-/* Melhorias para o logo */
+.menu-items a:hover {
+  background: linear-gradient(90deg, #6b3f00, #d08400);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* Só funciona no Firefox com prefixo, mas não afeta */
+  transform: scale(1.1);
+}
+
+.btn-itens {
+  background-color: #4B2E00;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  display: inline-block;
+  transition: all 0.3s ease; /* animação suave */
+}
+
+.btn-itens:hover {
+  background-color: #6b3f00;     /* cor mais clara ao passar o mouse */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* sombra ao redor */
+  transform: scale(1.05);        /* leve zoom */
+}       
+ 
 .logo {
-    font-family: 'Poppins', sans-serif;
-    letter-spacing: 1px; /* Espaçamento entre letras */
-    line-height: 1.2;
+  order: 1.2;
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
 }
-
-.logo-amp {
-    letter-spacing: 2px; /* Espaçamento extra para G&R */
-    display: inline-block;
-    padding: 0 2px;
-}
-
 .showcase-area {
   height: 60vh; /* Altura igual a 50% da altura visível da tela (viewport) */
   
