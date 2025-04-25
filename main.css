@@ -118,9 +118,9 @@ body {
 }         
  
 .logo {
-  order: 1.2;
-  font-size: 1.2rem;
-  margin-bottom: 1.2rem;
+  order: 1;
+  font-size: 1rem;
+  margin-bottom: 1rem;
 }
 .showcase-area {
   height: 60vh; /* Altura igual a 50% da altura visível da tela (viewport) */
