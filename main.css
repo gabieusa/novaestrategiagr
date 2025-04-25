@@ -500,17 +500,17 @@ body {
 }
 
 .customer-photo img {
-  width: 150px;
-  height: 150px;
-  object-fit: contain;    /* Mostra a imagem inteira sem cortes */
-  object-position: center;
-  border-radius: 20px;
+  max-width: 180px;       /* Largura máxima aumentada */
+  height: auto;           /* Altura proporcional */
   display: block;
   margin: 0 auto;
-  border: 3px solid #f0f0f0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-  padding: 10px;          /* Adiciona espaço interno */
+  object-fit: contain;    /* Garante que toda imagem seja visível */
+  object-position: center;
+  padding: 5px;          /* Espaço interno reduzido */
+  background: transparent; /* Remove o fundo branco */
+  border-radius: 0;      /* Remove bordas arredondadas */
+  border: none;          /* Remove a borda */
+  box-shadow: none;      /* Remove sombra */
 }
 
 @media (max-width: 480px) {
