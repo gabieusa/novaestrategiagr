@@ -654,7 +654,10 @@ input, textarea {
 
 @media (max-width: 480px) {
   .slogan-main {
-    white-space: normal; /* Permite quebra de linha se necessário */
+    white-space: normal; /* Permite quebra de linha */
+    line-height: 1.5; /* Melhora legibilidade em mobile */
+    font-size: 0.95rem; /* Tamanho ligeiramente maior em mobile */
+    padding: 0.5rem; /* Reduz espaçamento lateral */
   }
 }
 
