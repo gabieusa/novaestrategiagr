@@ -587,6 +587,20 @@ input, textarea {
   font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
   border-top: 4px solid #ddbc03; /* Amarelo queimado */
 }
+.footer-distributed {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.footer-distributed .footer-left {
+    width: 40%;
+}
+
+.footer-distributed .footer-right {
+    width: 40%;
+}
 
 .footer-container {
   max-width: 1200px;
