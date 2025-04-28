@@ -638,7 +638,7 @@ input, textarea {
 .footer-logo {
   width: 100px;
   height: auto;
-  border-radius: 10px;
+  border-radius: 30px;
 }
 
 .slogan-container {
@@ -684,9 +684,16 @@ input, textarea {
   font-size: 1.1rem;
   margin-bottom: 12px;
   color: #ffffff;
-  display: flex;
+  display: inline-flex; /* Melhor para alinhamento de título */
   align-items: center;
+  vertical-align: middle;
   gap: 8px;
+}
+
+.section-title img, .section-title svg {
+  width: 20px; /* ou o tamanho ideal do ícone */
+  height: 20px;
+  object-fit: contain;
 }
 
 .hours-text {
