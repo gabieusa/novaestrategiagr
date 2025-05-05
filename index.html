@@ -31,6 +31,25 @@
                   <li><a href="#testimonials">Avaliações</a></li>
                   <li><a href="#contact">Contato</a></li>
                   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+                    <script>
+                    document.querySelectorAll('a[href^="#"]').forEach(link => {
+                      link.addEventListener('click', function(e) {
+                        const targetId = this.getAttribute('href');
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                          e.preventDefault();
+                          targetElement.scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'start'
+                          });
+                          // Remove o hash da URL sem afetar o histórico
+                          setTimeout(() => {
+                            window.history.replaceState({}, '', window.location.pathname + window.location.search);
+                          }, 100);
+                        }
+                      });
+                    });
+                  </script>       
               </ul>
               <h1 class="logo">Nova Estratégia G&R</h1>
           </div>
