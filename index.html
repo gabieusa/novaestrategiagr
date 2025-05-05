@@ -23,70 +23,63 @@
                 <span class="line line2"></span>
                 <span class="line line3"></span>
               </div>
-              <ul class="menu-items">
-                   <li><a href="/" data-scroll="home">Inicio</a></li>
-                    <li><a href="/sobre" data-scroll="about">Sobre</a></li>
-                    <li><a href="/categorias" data-scroll="food">Categoria</a></li>
-                    <li><a href="/materiais-escritorio" data-scroll="food-menu">Materiais de Escritório</a></li>
-                    <li><a href="/avaliacoes" data-scroll="testimonials">Avaliações</a></li>
-                    <li><a href="/contato" data-scroll="contact">Contato</a></li>
-                  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+     <ul class="menu-items">
+    <li><a href="javascript:void(0)" data-target="home">Inicio</a></li>
+    <li><a href="javascript:void(0)" data-target="about">Sobre</a></li>
+    <li><a href="javascript:void(0)" data-target="food">Categoria</a></li>
+    <li><a href="javascript:void(0)" data-target="food-menu">Materiais de Escritório</a></li>
+    <li><a href="javascript:void(0)" data-target="testimonials">Avaliações</a></li>
+    <li><a href="javascript:void(0)" data-target="contact">Contato</a></li>
+</ul>
+
 <script>
-// Versão reforçada com múltiplas camadas de proteção
-document.addEventListener('DOMContentLoaded', function() {
-  // 1. Remove o hash ao carregar a página
-  if(window.location.hash) {
-    cleanUrl();
-  }
-
-  // 2. Configura os listeners dos links
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', smoothScroll);
-  });
-
-  // Função principal
-  function smoothScroll(e) {
-    const targetId = this.getAttribute('href');
-    const targetElement = document.querySelector(targetId);
-    
-    if(targetElement) {
-      e.preventDefault();
-      
-      // Primeiro remove o hash
-      cleanUrl();
-      
-      // Depois rola suavemente
-      setTimeout(() => {
-        targetElement.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }, 10);
-      
-      // Limpeza redundante
-      setTimeout(cleanUrl, 300);
+$(document).ready(function() {
+    // 1. Remove qualquer hash existente
+    if(window.location.hash) {
+        history.replaceState(null, null, ' ');
     }
-  }
-
-  // Função para limpar a URL
-  function cleanUrl() {
-    // Método 1: replaceState
-    try {
-      history.replaceState(null, null, ' ');
-    } catch(e) {}
     
-    // Método 2: location.hash
-    setTimeout(() => {
-      window.location.hash = '';
-    }, 50);
+    // 2. Configura os cliques do menu
+    $(".menu-items a[data-target]").on('click', function(e) {
+        e.preventDefault();
+        const targetId = $(this).data('target');
+        const targetElement = document.getElementById(targetId);
+        
+        if(targetElement) {
+            // Rolagem suave com JavaScript puro
+            smoothScrollTo(targetElement);
+            
+            // Atualiza o título da página (opcional)
+            document.title = "Nova Estratégia | " + $(this).text();
+        }
+    });
     
-    // Método 3: Atualização completa
-    setTimeout(() => {
-      if(window.location.hash) {
-        window.history.replaceState({}, '', window.location.pathname + window.location.search);
-      }
-    }, 100);
-  }
+    // Função de rolagem suave otimizada
+    function smoothScrollTo(element) {
+        const start = window.pageYOffset;
+        const targetPos = element.getBoundingClientRect().top;
+        const duration = 800;
+        let startTime = null;
+        
+        const animation = (currentTime) => {
+            if(!startTime) startTime = currentTime;
+            const timeElapsed = currentTime - startTime;
+            const progress = Math.min(timeElapsed / duration, 1);
+            const ease = easeOutQuad(progress);
+            window.scrollTo(0, start + targetPos * ease);
+            
+            if(timeElapsed < duration) {
+                requestAnimationFrame(animation);
+            }
+        };
+        
+        requestAnimationFrame(animation);
+    }
+    
+    // Função de easing
+    function easeOutQuad(t) {
+        return t * (2 - t);
+    }
 });
 </script>
               </ul>
