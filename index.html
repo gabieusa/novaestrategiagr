@@ -32,24 +32,46 @@
                   <li><a href="#contact">Contato</a></li>
                   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
                     <script>
-                    document.querySelectorAll('a[href^="#"]').forEach(link => {
-                      link.addEventListener('click', function(e) {
-                        const targetId = this.getAttribute('href');
-                        const targetElement = document.querySelector(targetId);
-                        if (targetElement) {
-                          e.preventDefault();
-                          targetElement.scrollIntoView({ 
-                            behavior: 'smooth',
-                            block: 'start'
-                          });
-                          // Remove o hash da URL sem afetar o histórico
-                          setTimeout(() => {
-                            window.history.replaceState({}, '', window.location.pathname + window.location.search);
-                          }, 100);
-                        }
-                      });
-                    });
-                  </script>       
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      
+      if (targetElement) {
+        e.preventDefault();
+        
+        // 1. Rola suavemente para a seção
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+
+        // 2. Remove o hash da URL de forma confiável
+        setTimeout(() => {
+          if (history.replaceState) {
+            // Cria uma URL limpa sem hash
+            const cleanUrl = window.location.pathname + window.location.search;
+            
+            // Substitui no histórico sem recarregar
+            history.replaceState(null, null, cleanUrl);
+            
+            // Força a atualização em alguns navegadores
+            window.dispatchEvent(new Event('popstate'));
+          }
+        }, 300); // Aumentamos o tempo para garantir a conclusão da rolagem
+      }
+    });
+  });
+
+  // Remove o hash ao carregar a página
+  window.addEventListener('load', function() {
+    if (window.location.hash) {
+      setTimeout(() => {
+        history.replaceState(null, null, ' ');
+      }, 50);
+    }
+  });
+</script>
               </ul>
               <h1 class="logo">Nova Estratégia G&R</h1>
           </div>
