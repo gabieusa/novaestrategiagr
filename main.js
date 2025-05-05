@@ -1,17 +1,27 @@
-$(document).ready(function () {
-    $("a").on("click", function (event) {
-      if (this.hash !== "") {
-        event.preventDefault();
-        var hash = this.hash;
-      $("html, body").animate(
-          {
-            scrollTop: $(hash).offset().top - 100, // compensa altura da navbar
-          },
-          800,
-          function () {
-            window.location.hash = hash;
-          }
-        );
-      }
+$(document).ready(function() {
+    // 1. Remove hash inicial
+    cleanHash();
+    
+    // 2. Configura rolagem suave
+    $("a[href^='#']").on('click', function(e) {
+        e.preventDefault();
+        var target = $(this.hash);
+        
+        if(target.length) {
+            // Rolagem suave
+            $('html, body').animate({
+                scrollTop: target.offset().top - 100
+            }, 800, cleanHash);
+        }
     });
-  });
+    
+    // Função para limpar hash
+    function cleanHash() {
+        try {
+            history.replaceState(null, null, ' ');
+            if(window.location.hash) {
+                window.location.hash = '';
+            }
+        } catch(e) {}
+    }
+});
