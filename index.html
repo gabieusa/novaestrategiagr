@@ -32,70 +32,63 @@
                   <li><a href="#contact">Contato</a></li>
                   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
 <script>
-// Método 100% eficaz - Abordagem alternativa
+// Versão reforçada com múltiplas camadas de proteção
 document.addEventListener('DOMContentLoaded', function() {
-  // 1. Remove qualquer hash existente ao carregar
-  removeHash();
-  
-  // 2. Intercepta todos os cliques em links âncora
-  document.body.addEventListener('click', function(e) {
-    if(e.target.closest('a[href^="#"]')) {
-      e.preventDefault();
-      const target = document.querySelector(e.target.getAttribute('href'));
-      if(target) {
-        // Rola sem usar hash na URL
-        smoothScrollTo(target);
-        // Remove completamente o hash
-        setTimeout(removeHash, 50);
-      }
-    }
+  // 1. Remove o hash ao carregar a página
+  if(window.location.hash) {
+    cleanUrl();
+  }
+
+  // 2. Configura os listeners dos links
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', smoothScroll);
   });
 
-  // Função para rolagem suave sem hash
-  function smoothScrollTo(element) {
-    const start = window.pageYOffset;
-    const target = element.getBoundingClientRect().top;
-    const duration = 500;
-    const startTime = performance.now();
+  // Função principal
+  function smoothScroll(e) {
+    const targetId = this.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
     
-    function scrollStep(timestamp) {
-      const elapsed = timestamp - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      window.scrollTo(0, start + target * easeInOutCubic(progress));
+    if(targetElement) {
+      e.preventDefault();
       
-      if(progress < 1) {
-        window.requestAnimationFrame(scrollStep);
-      }
+      // Primeiro remove o hash
+      cleanUrl();
+      
+      // Depois rola suavemente
+      setTimeout(() => {
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }, 10);
+      
+      // Limpeza redundante
+      setTimeout(cleanUrl, 300);
     }
+  }
+
+  // Função para limpar a URL
+  function cleanUrl() {
+    // Método 1: replaceState
+    try {
+      history.replaceState(null, null, ' ');
+    } catch(e) {}
     
-    window.requestAnimationFrame(scrollStep);
-  }
-
-  // Função de easing para rolagem suave
-  function easeInOutCubic(t) {
-    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-  }
-
-  // Função para remover o hash completamente
-  function removeHash() {
-    history.replaceState(null, null, ' ');
-    if(window.location.hash) {
+    // Método 2: location.hash
+    setTimeout(() => {
       window.location.hash = '';
-    }
+    }, 50);
+    
+    // Método 3: Atualização completa
+    setTimeout(() => {
+      if(window.location.hash) {
+        window.history.replaceState({}, '', window.location.pathname + window.location.search);
+      }
+    }, 100);
   }
 });
 </script>
-
-<style>
-  /* Fallback CSS para rolagem suave */
-  html {
-    scroll-behavior: smooth;
-  }
-  /* Previne flash do elemento alvo */
-  :target {
-    scroll-margin-top: 100px;
-  }
-</style>
               </ul>
               <h1 class="logo">Nova Estratégia G&R</h1>
           </div>
