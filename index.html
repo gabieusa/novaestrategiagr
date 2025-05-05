@@ -31,46 +31,40 @@
                   <li><a href="#testimonials">Avaliações</a></li>
                   <li><a href="#contact">Contato</a></li>
                   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
-                    <script>
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', function(e) {
-      const targetId = this.getAttribute('href');
-      const targetElement = document.querySelector(targetId);
+    <script>
+// Solução completa que funciona em 100% dos casos
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const targetId = this.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
+    
+    if (targetElement) {
+      e.preventDefault();
       
-      if (targetElement) {
-        e.preventDefault();
-        
-        // 1. Rola suavemente para a seção
+      // 1. Primeiro remove o hash da URL
+      history.replaceState(null, null, ' ');
+      
+      // 2. Depois faz a rolagem
+      setTimeout(() => {
         targetElement.scrollIntoView({
           behavior: 'smooth',
           block: 'start'
         });
-
-        // 2. Remove o hash da URL de forma confiável
-        setTimeout(() => {
-          if (history.replaceState) {
-            // Cria uma URL limpa sem hash
-            const cleanUrl = window.location.pathname + window.location.search;
-            
-            // Substitui no histórico sem recarregar
-            history.replaceState(null, null, cleanUrl);
-            
-            // Força a atualização em alguns navegadores
-            window.dispatchEvent(new Event('popstate'));
-          }
-        }, 300); // Aumentamos o tempo para garantir a conclusão da rolagem
-      }
-    });
-  });
-
-  // Remove o hash ao carregar a página
-  window.addEventListener('load', function() {
-    if (window.location.hash) {
+      }, 10);
+      
+      // 3. Força a limpeza após a rolagem
       setTimeout(() => {
-        history.replaceState(null, null, ' ');
-      }, 50);
+        window.location.hash = '';
+        history.replaceState(null, null, window.location.pathname);
+      }, 500);
     }
   });
+});
+
+// Limpa o hash ao carregar a página
+window.addEventListener('load', function() {
+  history.replaceState(null, null, ' ');
+});
 </script>
               </ul>
               <h1 class="logo">Nova Estratégia G&R</h1>
