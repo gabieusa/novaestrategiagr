@@ -31,20 +31,31 @@
                   <li><a href="#testimonials">Avaliações</a></li>
                   <li><a href="#contact">Contato</a></li>
                   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
-    <script>
-// Solução completa que funciona em 100% dos casos
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', function(e) {
+<script>
+// Versão reforçada com múltiplas camadas de proteção
+document.addEventListener('DOMContentLoaded', function() {
+  // 1. Remove o hash ao carregar a página
+  if(window.location.hash) {
+    cleanUrl();
+  }
+
+  // 2. Configura os listeners dos links
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', smoothScroll);
+  });
+
+  // Função principal
+  function smoothScroll(e) {
     const targetId = this.getAttribute('href');
     const targetElement = document.querySelector(targetId);
     
-    if (targetElement) {
+    if(targetElement) {
       e.preventDefault();
       
-      // 1. Primeiro remove o hash da URL
-      history.replaceState(null, null, ' ');
+      // Primeiro remove o hash
+      cleanUrl();
       
-      // 2. Depois faz a rolagem
+      // Depois rola suavemente
       setTimeout(() => {
         targetElement.scrollIntoView({
           behavior: 'smooth',
@@ -52,18 +63,30 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
         });
       }, 10);
       
-      // 3. Força a limpeza após a rolagem
-      setTimeout(() => {
-        window.location.hash = '';
-        history.replaceState(null, null, window.location.pathname);
-      }, 500);
+      // Limpeza redundante
+      setTimeout(cleanUrl, 300);
     }
-  });
-});
+  }
 
-// Limpa o hash ao carregar a página
-window.addEventListener('load', function() {
-  history.replaceState(null, null, ' ');
+  // Função para limpar a URL
+  function cleanUrl() {
+    // Método 1: replaceState
+    try {
+      history.replaceState(null, null, ' ');
+    } catch(e) {}
+    
+    // Método 2: location.hash
+    setTimeout(() => {
+      window.location.hash = '';
+    }, 50);
+    
+    // Método 3: Atualização completa
+    setTimeout(() => {
+      if(window.location.hash) {
+        window.history.replaceState({}, '', window.location.pathname + window.location.search);
+      }
+    }, 100);
+  }
 });
 </script>
               </ul>
