@@ -308,9 +308,9 @@ if (!isContactSaved) {
   let mensagemAutomatica = "";
   
   if (diaSemana >= 1 && diaSemana <= 5 && hora >= 8 && hora < 18) {
-    mensagemAutomatica = "🟢 Olá! Agradecemos o seu contato.%0ARetornaremos em breve.%0A%0AHorário de atendimento: Seg-Sex, 08h-18h.%0A%0A---%0A";
+    mensagemAutomatica = "Olá! Agradecemos o seu contato.%0ARetornaremos em breve.%0A%0AHorário de atendimento: Seg-Sex, 08h-18h.%0A%0A---%0A";
   } else {
-    mensagemAutomatica = "🔴 Fora do horário comercial.%0ARetornaremos no próximo dia útil.%0A%0A---%0A";
+    mensagemAutomatica = "Fora do horário comercial.%0ARetornaremos no próximo dia útil.%0A%0A---%0A";
   }
   
   respostaFinal = `${dadosEmpresa}%0A%0A${mensagemAutomatica}${mensagemCliente}`;
