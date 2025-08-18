@@ -458,6 +458,17 @@ body {
   }
 }
 
+/*  titile CSS */
+.food-titile {
+  font-size: 1.5rem; /* Tamanho padrão para desktop */
+}
+
+@media (max-width: 768px) {
+  .food-titile {
+    font-size: 1.2rem; /* Tamanho reduzido para mobile */
+  }
+}
+
 #testimonials {
   padding: 5rem 0;
   background: rgba(243, 243, 243);
@@ -1047,4 +1058,5 @@ input, textarea {
     margin: 0 auto;
   }
 }
+
 
