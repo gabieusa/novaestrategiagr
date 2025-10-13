@@ -485,19 +485,21 @@ body {
 
 .testimonial-container {
   display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
   justify-content: center;
-  padding: 1rem;
 }
 
 .testimonial-box {
-  max-width: 600px;
-  width: 100%;
+  flex: 1 1 300px;
+  max-width: 350px;
   background: #fff;
+  padding: 20px;
   border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
+
 
 .highlight-badge {
   display: inline-block;
@@ -1058,5 +1060,6 @@ input, textarea {
     margin: 0 auto;
   }
 }
+
 
 
