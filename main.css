@@ -507,22 +507,28 @@ body {
   transform: translateY(-5px);
 }
 
-.customer-photo img {
-  max-width: 100px;
-  height: auto;
-  margin: 10px auto;
-  display: block;
-}
-
 .highlight-badge {
   display: inline-block;
-  background-color: #FFD700;
+  background: gold;
   color: #000;
-  padding: 5px 10px;
-  border-radius: 8px;
-  font-weight: 600;
-  margin-bottom: 10px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  font-size: 1rem;
 }
+.customer-photo img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;    /* Mostra a imagem inteira sem cortes */
+  object-position: center;
+  border-radius: 20px;
+  display: block;
+  margin: 0 auto;
+  border: 3px solid #f0f0f0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  padding: 10px;          /* Adiciona espaço interno */
 
 .testimonial-text {
   font-style: italic;
@@ -1066,6 +1072,7 @@ input, textarea {
     margin: 0 auto;
   }
 }
+
 
 
 
