@@ -510,7 +510,7 @@ body {
 .customer-photo img {
   width: 150px;
   height: 150px;
-  object-fit: contain;    /* Mostra a imagem inteira sem cortes */
+  object-fit: contain;
   object-position: center;
   border-radius: 20px;
   display: block;
@@ -518,7 +518,8 @@ body {
   border: 3px solid #f0f0f0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: #fff;
-  padding: 10px;          /* Adiciona espaço interno */
+  padding: 10px;
+}
 
 .highlight-badge {
   display: inline-block;
@@ -1078,6 +1079,7 @@ input, textarea {
     margin: 0 auto;
   }
 }
+
 
 
 
