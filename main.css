@@ -504,19 +504,9 @@ body {
 }
 
 .testimonial-box:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px);  
 }
 
-.highlight-badge {
-  display: inline-block;
-  background: gold;
-  color: #000;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  font-size: 1rem;
-}
 .customer-photo img {
   width: 150px;
   height: 150px;
@@ -530,10 +520,15 @@ body {
   background-color: #fff;
   padding: 10px;          /* Adiciona espaço interno */
 
-.testimonial-text {
-  font-style: italic;
-  color: #333;
-  margin-top: 10px;
+.highlight-badge {
+  display: inline-block;
+  background: gold;
+  color: #000;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  font-size: 1rem;
 }
 
 .customer-name {
@@ -554,6 +549,18 @@ body {
   font-size: 1.1rem;
 }
 
+/* Responsividade */
+@media (max-width: 768px) {
+  .testimonial-container {
+    flex-wrap: wrap; /* agora permite quebra em telas pequenas */
+  }
+
+  .testimonial-box {
+    flex: 1 1 100%;
+    max-width: 90%;
+    margin: auto;
+  }
+}
 #contact {
   padding: 5rem 0;
   background: rgb(226, 226, 226);
@@ -1071,6 +1078,7 @@ input, textarea {
     margin: 0 auto;
   }
 }
+
 
 
 
