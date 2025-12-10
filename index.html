@@ -233,71 +233,79 @@ $(document).ready(function() {
   </div>         
 </div>
       </section>
-      <section id="testimonials">
-        <h2 class="testimonial-title">Clientes e Instituições que Atendemos</h2>
-        <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;600&display=swap" rel="stylesheet">
-        <div class="testimonial-container container">
-          <div class="testimonial-box">
-            <span class="highlight-badge">Cliente Premium</span>
-            <div class="customer-detail">
-              <div class="customer-photo">
-                <img src="imagem13.jpeg" alt="Foto da Empresa" />
-                <p class="customer-name">Brasil Esportes</p>
-              </div>
-            </div>
-            <div class="star-rating">
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-            </div>
-            <p class="testimonial-text">
-              Agradeço pela agilidade na entrega e pela cordialidade no atendimento. O serviço prestado demonstra alto padrão de qualidade e eficiência. Recomendo a todos que buscam excelência e profissionalismo.
-            </p>        
-          </div>
-            <!-- Cliente SESC como dispensa eletrônica -->
-    <div class="testimonial-box">
-      <span class="highlight-badge">Pregão Eletrônico</span>
-      <div class="customer-detail">
-        <div class="customer-photo">
-          <img src="logo-sesc.jpg" alt="Logo do Sesc" />
-          <p class="customer-name">SESC BAHIA</p>
-        </div>
-      </div>
-       <p class="testimonial-text" style="font-style: italic;">
-        Compra Eletrônica e Pregão Eletrônico realizados com agilidade e segurança pelo Portal do SESC Bahia.
-      </p>
+      <!-- Seção de Clientes - Layout fluido, elegante e minimalista -->
+<section id="clientes" class="clientes-section">
+  <h2 class="clientes-title">Clientes e Instituições que Atendemos</h2>
+
+  <div class="logos-wrapper">
+    <div class="logo-item">
+      <img src="imagem13.jpeg" alt="Brasil Esportes" />
     </div>
-             <!-- Cliente PACAEMBU como pregão eletrônico -->
-    <div class="testimonial-box">
-      <span class="highlight-badge">Pregão eletrônico</span>
-      <div class="customer-detail">
-        <div class="customer-photo">
-          <img src="pacaembu.png" alt="Logo Pacaembu" />
-          <p class="customer-name">Prefeitura Municipal de Pacaembu/SP</p>
-        </div>
-      </div>
-       <p class="testimonial-text" style="font-style: italic;">
-       Transparência e eficiência no maior portal de compras do Brasil: BLL Licitações.
-      </p>
+    <div class="logo-item">
+      <img src="logo-sesc.jpg" alt="SESC Bahia" />
     </div>
-        </div> <!-- Cliente SEMSC como DISPENSA ELETRÔNICA -->
-    <div class="testimonial-box">
-      <span class="highlight-badge">Dispensa Eletrônica</span>
-      <div class="customer-detail">
-        <div class="customer-photo">
-          <img src="imagem18.jpeg" alt="Logo SEMSC" />
-          <p class="customer-name">SEMSC - Secretaria Municipal de Segurança Cidadã/ Maceió - AL</p>
-        </div>
-      </div>
-       <p class="testimonial-text" style="font-style: italic;">
-       No GOV, vender para o Governo é simples e transparente. A Secretaria reconheceu a qualidade e eficiência dos nossos serviços prestados.
-      </p>
+    <div class="logo-item">
+      <img src="pacaembu.png" alt="Prefeitura de Pacaembu" />
     </div>
-      </section>
-        </div>
-      </section>
+    <div class="logo-item">
+      <img src="imagem18.jpeg" alt="SEMSC Maceió" />
+    </div>
+  </div>
+</section>
+<style>
+  .clientes-section {
+    padding: 60px 0;
+    text-align: center;
+    background: #ffffff;
+  }
+
+  .clientes-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    font-family: "Merriweather Sans", sans-serif;
+    color: #222;
+  }
+
+  .logos-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 40px;
+    width: 90%;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  .logo-item {
+    background: #f5f5f5;
+    padding: 25px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    border: 1px solid #e5e5e5;
+  }
+
+  .logo-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.10);
+  }
+
+  .logo-item img {
+    max-width: 100%;
+    height: 70px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.9;
+    transition: all 0.3s ease;
+  }
+
+  .logo-item:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+  }
+</style>
       <section id="contact">
         <div class="contact-container container">
           <div class="contact-img">
@@ -400,6 +408,7 @@ window.open(`https://wa.me/${numeroEmpresa}?text=${respostaFinal}`, '_blank');
       <script src="main.js"></script>
 </body>
 </html>
+
 
 
 
