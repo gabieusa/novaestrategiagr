@@ -124,7 +124,7 @@
   .price-row{display:flex;align-items:baseline;gap:10px;margin-bottom:26px;}
   .price-row .old{font-size:14px;color:var(--paper-soft);text-decoration:line-through;}
   .price-card.featured .price-row .old{color:#7C86A0;}
-  .price-row .val{font-family:'Fraunces',serif;font-size:38px;font-weight:600;}
+  .price-row {display: flex;align-items: center;gap: 12px;margin-bottom: 26px;flex-wrap: wrap;}
   .price-row .cond{font-size:12.5px;color:var(--ink-soft);}
   .price-card.featured .price-row .cond{color:#9BA5BC;}
   .price-feats{display:flex;flex-direction:column;gap:12px;margin-bottom:30px;flex:1;}
