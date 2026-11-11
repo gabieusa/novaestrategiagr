@@ -121,7 +121,7 @@
   .price-card.featured h3{color:var(--paper);}
   .price-card .pdesc{color:var(--ink-soft);font-size:14.5px;margin-bottom:26px;}
   .price-card.featured .pdesc{color:#B7BFD2;}
-  .price-row{display:flex;align-items:baseline;gap:10px;margin-bottom:26px;}
+  .price-row .val {font-family: 'Fraunces', serif;font-size: 34px;font-weight: 600;}
   .price-row .old{font-size:14px;color:var(--paper-soft);text-decoration:line-through;}
   .price-card.featured .price-row .old{color:#7C86A0;}
   .price-row {display: flex;align-items: center;gap: 12px;margin-bottom: 26px;flex-wrap: wrap;}
